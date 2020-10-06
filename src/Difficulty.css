@@ -1,0 +1,61 @@
+.difficulty-page {
+	height: 100vh;
+	overflow: hidden;
+	background: #00b4db; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#0083b0,
+		#00b4db
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#0083b0,
+		#00b4db
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+}
+
+.difficulty-buttons {
+	display: flex;
+	justify-content: center;
+	height: 80vh;
+	width: 80vw;
+	margin: 15vh auto;
+}
+
+.difficulty-buttons button {
+	width: 30%;
+	margin: 10px;
+	border-radius: 10px;
+	font-size: 24px;
+
+	background: #d3cce3; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#e9e4f0,
+		#d3cce3
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#e9e4f0,
+		#d3cce3
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	transition: all 0.3s ease-in;
+}
+
+.difficulty-buttons button:hover {
+	background: #4e54c8; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#8f94fb,
+		#4e54c8
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#8f94fb,
+		#4e54c8
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+}

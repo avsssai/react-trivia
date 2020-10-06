@@ -1,4 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Navbar from './Navbar';
+import Button from '@material-ui/core/Button';
+
+import './Difficulty.css';
 
 export default class Difficulty extends Component {
     constructor(props) {
@@ -10,10 +14,16 @@ export default class Difficulty extends Component {
     }
     render () {
         return (
-            <div>
-                <button onClick={this.selectDifficulty} name="easy">Easy</button>
-                <button onClick={this.selectDifficulty} name="medium">Medium</button>
-                <button onClick={this.selectDifficulty} name="hard">Hard</button>
+            <div className="difficulty-page">
+                <nav>
+                    <Navbar />
+                </nav>
+                <section className="difficulty-buttons">
+
+                    <Button onClick={this.selectDifficulty} variant="outlined" name="easy">Easy</Button>
+                    <Button onClick={this.selectDifficulty} variant="outlined" name="medium">Medium</Button>
+                    <Button onClick={this.selectDifficulty} variant="outlined" name="hard">Hard</Button>
+                </section>
             </div>
         )
     }

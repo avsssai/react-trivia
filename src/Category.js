@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import { categoryMapper } from './helpers';
+import Button from '@material-ui/core/Button';
+import Navbar from './Navbar';
+import './Category.css';
+import { CssBaseline } from '@material-ui/core';
 
 export default class Category extends Component {
     constructor(props) {
@@ -11,10 +15,15 @@ export default class Category extends Component {
     }
     render () {
         return (
-            <div>
-                {categoryMapper().map(category => (
-                    <button name={category.number} onClick={this.selectCategory} key={category.number}>{category.name}</button>
-                ))}
+            <div className="category-page">
+                <Navbar />
+                <CssBaseline />
+                <section className="category-wrapper">
+
+                    {categoryMapper().map(category => (
+                        <Button variant="outlined" name={category.number} onClick={this.selectCategory} key={category.number}>{category.name}</Button>
+                    ))}
+                </section>
             </div>
         )
     }

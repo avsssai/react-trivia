@@ -1,0 +1,71 @@
+.landing-page {
+	height: 90vh;
+	background: #00b4db; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to right,
+		#0083b0,
+		#00b4db
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#0083b0,
+		#00b4db
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: white;
+}
+
+.landing-content {
+	height: 60vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 10vh 10vw;
+}
+
+.left-content button {
+	margin-top: 3rem;
+	background-color: #6c61f6;
+	color: white;
+}
+
+.left-content button:hover {
+	color: saddlebrown;
+}
+
+.left-content a {
+	text-decoration: none;
+}
+/* .question-mark-image {
+	height: 300px;
+	width: 300px;
+} */
+.question-mark-image img {
+	width: 350px;
+	height: 350px;
+}
+
+@media (max-width: 500px) {
+	.landing-content {
+		height: 60vh;
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-around;
+		align-items: center;
+		margin: 10vh 10vw;
+	}
+
+	.question-mark-image img {
+		width: 200px;
+		height: 200px;
+		margin-top: 10vh;
+	}
+
+	.left-content button {
+		margin-top: 3rem;
+		background-color: #6c61f6;
+		color: white;
+	}
+	.left-content {
+		text-align: center;
+	}
+}
