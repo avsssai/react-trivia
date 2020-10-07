@@ -1,0 +1,16 @@
+.question-container {
+	height: 500px;
+	width: 800px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #eef2f3;
+	border-radius: 15px;
+	margin: 0 auto;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.question-wrapper {
+	height: 500px;
+	width: 90%;
+}

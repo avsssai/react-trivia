@@ -1,0 +1,9 @@
+.game-container {
+	height: 90vh;
+	display: flex;
+	align-items: center;
+	margin-top: 10vh;
+	background-color: #34adff;
+	background-image: -webkit-linear-gradient(150deg, #6c61f6 15%, #4cbfff 45%);
+	min-height: 400px;
+}

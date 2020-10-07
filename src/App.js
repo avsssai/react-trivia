@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import Landing from './Landing.js';
 import Category from './Category';
 import Difficulty from './Difficulty';
+import Game from './Game';
 import Axios from 'axios';
 import { makeQuestionSets } from './helpers';
 import './App.css';
@@ -49,6 +50,7 @@ class App extends Component {
           <Route exact path="/" render={(routeProps) => <Landing {...routeProps} getData={this.getQuestions} />} />
           <Route exact path="/difficulty" render={(routeProps) => <Difficulty {...routeProps} selectDifficulty={this.selectDifficulty} />} />
           <Route exact path="/category" render={(routeProps) => <Category {...routeProps} selectCategory={this.selectCategory} />} />
+          <Route exact path="/game" render={routeProps => <Game {...routeProps} questionSets={this.state.data} />} />
         </Switch>
       </div>
     )

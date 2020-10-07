@@ -10,7 +10,7 @@
 .difficulty-buttons {
 	display: flex;
 	justify-content: center;
-	height: 80vh;
+	height: 60vh;
 	width: 80vw;
 	margin: 15vh auto;
 }
@@ -28,7 +28,11 @@
 .difficulty-buttons button:hover {
 	transform: scale(1.03);
 }
-
+.difficulty-heading {
+	position: relative;
+	top: 12vh;
+	text-align: center;
+}
 .easy {
 	background-color: #94e27e !important;
 }

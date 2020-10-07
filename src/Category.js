@@ -3,7 +3,7 @@ import { categoryMapper } from './helpers';
 import Button from '@material-ui/core/Button';
 import Navbar from './Navbar';
 import './Category.css';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, Typography } from '@material-ui/core';
 
 export default class Category extends Component {
     constructor(props) {
@@ -18,6 +18,7 @@ export default class Category extends Component {
             <div className="category-page">
                 <Navbar />
                 <CssBaseline />
+                <Typography variant="h3" className="category-heading">Choose Category!</Typography>
                 <section className="category-wrapper">
 
                     {categoryMapper().map(category => (
