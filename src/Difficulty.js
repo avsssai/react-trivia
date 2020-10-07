@@ -20,9 +20,9 @@ export default class Difficulty extends Component {
                 </nav>
                 <section className="difficulty-buttons">
 
-                    <Button onClick={this.selectDifficulty} variant="outlined" name="easy">Easy</Button>
-                    <Button onClick={this.selectDifficulty} variant="outlined" name="medium">Medium</Button>
-                    <Button onClick={this.selectDifficulty} variant="outlined" name="hard">Hard</Button>
+                    <Button onClick={this.selectDifficulty} variant="outlined" name="easy" className="easy">Easy</Button>
+                    <Button onClick={this.selectDifficulty} variant="outlined" className="medium" name="medium">Medium</Button>
+                    <Button onClick={this.selectDifficulty} variant="outlined" className="hard" name="hard">Hard</Button>
                 </section>
             </div>
         )

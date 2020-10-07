@@ -1,16 +1,10 @@
 .landing-page {
 	height: 90vh;
-	background: #00b4db; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#0083b0,
-		#00b4db
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#0083b0,
-		#00b4db
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	/* background: #00b4db;  */
+	/* fallback for old browsers */
+	background-color: #34adff;
+	background-image: -webkit-linear-gradient(150deg, #6c61f6 15%, #4cbfff 45%);
+	min-height: 400px;
 	color: white;
 }
 
