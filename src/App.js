@@ -24,7 +24,8 @@ class App extends Component {
   }
   async getQuestions () {
 
-    const url = `https://opentdb.com/api.php?amount=10&category=${this.state.category}&difficulty=${this.state.difficulty}`
+    const url = `https://opentdb.com/api.php?amount=10&category=${this.state.category}&difficulty=${this.state.difficulty}`;
+    console.log(url);
     const data = await Axios.get(url);
     console.log(data);
     this.setState({

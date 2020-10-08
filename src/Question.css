@@ -14,3 +14,47 @@
 	height: 500px;
 	width: 90%;
 }
+
+.answers {
+	position: relative;
+	top: 50px;
+}
+
+.answer {
+	margin: 10px auto;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	background-image: -webkit-linear-gradient(150deg, #f3c4fb 15%, #ecbcfd 45%);
+	transition: all 0.3s ease-in-out;
+}
+.answer p {
+	font-weight: 500;
+	font-size: 14px;
+}
+.answer:hover {
+	background-image: -webkit-linear-gradient(150deg, #f3c4fb 15%, #ffafcc 45%);
+}
+.question {
+	height: 50px;
+}
+.actual-question {
+	font-size: 22px;
+
+	font-weight: 400;
+}
+.question-number {
+	font-weight: 900;
+	margin-right: 7px;
+	font-size: 48px;
+	font-style: italic;
+}
+
+.option {
+	font-weight: 900;
+	margin-right: 7px;
+	font-size: 24px;
+	font-style: italic;
+}
+
+.selected-answer {
+	background-image: -webkit-linear-gradient(150deg, #f3c4fb 15%, #ffafcc 45%);
+}
