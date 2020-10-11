@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import Landing from './Landing.js';
 import Category from './Category';
 import Difficulty from './Difficulty';
+import Results from './Results';
 import Game from './Game';
 import Axios from 'axios';
 import { makeQuestionSets } from './helpers';
@@ -15,12 +16,14 @@ class App extends Component {
       category: "",
       difficulty: "",
       data: [],
-      questionSets: []
+      questionSets: [],
+      back: false
 
     }
     this.getQuestions = this.getQuestions.bind(this);
     this.selectDifficulty = this.selectDifficulty.bind(this);
     this.selectCategory = this.selectCategory.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   async getQuestions () {
 
@@ -41,17 +44,28 @@ class App extends Component {
   }
   selectCategory (category) {
     this.setState({
-      category
+      category,
+      back: true
     }, () => this.props.history.push('/difficulty'))
   }
+  handleSubmit () {
+    this.setState({
+      back: false
+    })
+  }
   render () {
+    const { back, questionSets } = this.state;
     return (
       <div className="App">
         <Switch>
           <Route exact path="/" render={(routeProps) => <Landing {...routeProps} getData={this.getQuestions} />} />
           <Route exact path="/difficulty" render={(routeProps) => <Difficulty {...routeProps} selectDifficulty={this.selectDifficulty} />} />
           <Route exact path="/category" render={(routeProps) => <Category {...routeProps} selectCategory={this.selectCategory} />} />
-          <Route exact path="/game" render={routeProps => <Game {...routeProps} questionSets={this.state.data} />} />
+          <Redirect exact from="/difficulty" to="/game" />
+          <Route exact path="/game" render={routeProps => back ? <Game {...routeProps} questionSets={this.state.data} handleSubmit={this.handleSubmit} /> : <Redirect to={{ pathname: "/" }} />} />
+          <Redirect exact from="/game" to="/results" />
+
+          <Route exact path="/results" render={(routeProps) => <Results {...routeProps} questionSets={this.state.data} />} />
         </Switch>
       </div>
     )

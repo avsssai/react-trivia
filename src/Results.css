@@ -1,0 +1,16 @@
+.results-container {
+	margin: 15vh auto;
+	width: 50%;
+	text-align: center;
+}
+
+.score-scored {
+	font-size: 64px;
+	font-weight: 800;
+	margin: 5px;
+}
+
+.total-score {
+	margin: 2px;
+	font-size: 32px;
+}

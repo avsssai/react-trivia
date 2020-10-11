@@ -7,3 +7,47 @@
 	background-image: -webkit-linear-gradient(150deg, #6c61f6 15%, #4cbfff 45%);
 	min-height: 400px;
 }
+
+.my-question {
+	transition: transform 0.5s ease-in-out, opacity 1s ease-out;
+}
+
+/* DIRECTION FROM RIGHT TO LEFT */
+
+.my-question-enter.left {
+	transform: translateX(100%);
+	opacity: 1;
+}
+.my-question-enter-active.left {
+	transform: translateX(150%);
+	opacity: 0;
+}
+
+.my-question-exit.left {
+	transform: translateX(0%);
+	opacity: 1;
+}
+.my-question-exit-active.left {
+	transform: translateX(-150%);
+	opacity: 0;
+}
+
+/* DIRECTION FROM LEFT TO RIGHT */
+
+.my-question-enter.right {
+	transform: translateX(0%);
+	opacity: 1;
+}
+.my-question-enter-active.right {
+	transform: translateX(-150%);
+	opacity: 0;
+}
+
+.my-question-exit.right {
+	transform: translateX(0%);
+	opacity: 1;
+}
+.my-question-exit-active.right {
+	transform: translateX(150%);
+	opacity: 0;
+}

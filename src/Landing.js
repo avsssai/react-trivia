@@ -14,7 +14,7 @@ export default class Landing extends Component {
     render () {
         return (
             <section className="landing-page">
-                <Navbar />
+                <Navbar randomButton />
                 <CssBaseline />
                 <div className="landing-content" >
                     <div className="left-content">

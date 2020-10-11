@@ -19,14 +19,15 @@ class Answer extends Component {
     }
     render () {
         const options = ["A", "B", "C", "D"];
+        const { answer, selectedAnswer } = this.props;
         return (
-            <Card className={`answer ${this.state.selectedAnswer && "selected-answer"}`} onClick={this.selectAnswer}>
-                <CardContent>
+            <Card className={`answer ${answer === selectedAnswer && 'selected-answer'}`} onClick={this.selectAnswer}>
+                < CardContent >
                     <Typography variant="body2" component="p">
-                        <span className="option">{options[this.props.index]})</span>
+                        <span className='option'>{options[this.props.index]})</span>
                         {this.props.answer}
                     </Typography>
-                </CardContent>
+                </ CardContent>
             </Card>
         )
 
