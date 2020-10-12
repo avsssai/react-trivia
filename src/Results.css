@@ -14,3 +14,44 @@
 	margin: 2px;
 	font-size: 32px;
 }
+
+.correct-answers {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.question-card {
+	margin: 1rem auto;
+	/* height: 420px; */
+}
+
+.answer-card {
+	margin: 0.25rem auto;
+}
+
+.question-option {
+	font-size: 24px;
+	font-weight: 800;
+	margin-right: 0.5rem;
+}
+
+.actua-question {
+	font-size: 20px;
+}
+.answer-card.unattempted {
+	background-color: #e5e5e5;
+}
+.answer-card.correct {
+	background-color: #02c39a;
+}
+
+.answers {
+	margin-bottom: 3rem;
+}
+
+.answer-card.chosen-correct {
+	background-color: #02c39a;
+}
+.answer-card.chosen-wrong {
+	background-color: #f07167;
+}

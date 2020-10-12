@@ -17,13 +17,15 @@ class App extends Component {
       difficulty: "",
       data: [],
       questionSets: [],
-      back: false
+      back: false,
+      answers: Array(10).fill(null)
 
     }
     this.getQuestions = this.getQuestions.bind(this);
     this.selectDifficulty = this.selectDifficulty.bind(this);
     this.selectCategory = this.selectCategory.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.syncAnswers = this.syncAnswers.bind(this);
   }
   async getQuestions () {
 
@@ -53,8 +55,14 @@ class App extends Component {
       back: false
     })
   }
+
+  syncAnswers (answers) {
+    this.setState({
+      answers
+    })
+  }
   render () {
-    const { back, questionSets } = this.state;
+    const { back, data, answers } = this.state;
     return (
       <div className="App">
         <Switch>
@@ -62,10 +70,10 @@ class App extends Component {
           <Route exact path="/difficulty" render={(routeProps) => <Difficulty {...routeProps} selectDifficulty={this.selectDifficulty} />} />
           <Route exact path="/category" render={(routeProps) => <Category {...routeProps} selectCategory={this.selectCategory} />} />
           <Redirect exact from="/difficulty" to="/game" />
-          <Route exact path="/game" render={routeProps => back ? <Game {...routeProps} questionSets={this.state.data} handleSubmit={this.handleSubmit} /> : <Redirect to={{ pathname: "/" }} />} />
+          <Route exact path="/game" render={routeProps => back ? <Game {...routeProps} questionSets={data} handleSubmit={this.handleSubmit} syncAnswers={this.syncAnswers} /> : <Redirect to={{ pathname: "/" }} />} />
           <Redirect exact from="/game" to="/results" />
 
-          <Route exact path="/results" render={(routeProps) => <Results {...routeProps} questionSets={this.state.data} />} />
+          <Route exact path="/results" render={(routeProps) => <Results {...routeProps} questionSets={data} answers={answers} />} />
         </Switch>
       </div>
     )

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Question from './Question';
-import EndDialog from './EndDialog';
 import { CSSTransition } from 'react-transition-group';
 import './Game.css';
 
@@ -57,6 +56,7 @@ export default class Game extends Component {
     handleSelectAnswer (answer, index) {
         const answersClone = this.state.answers.slice();
         answersClone[index] = answer;
+        this.props.syncAnswers(answersClone);
         this.setState({
             answers: answersClone
         }, () => this.handleNextQuestionClick());

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import EndDialog from './EndDialog';
 
 import Button from '@material-ui/core/Button';
@@ -22,7 +23,9 @@ export default class Navbar extends Component {
 
                 }
                 {newGameButton && <Button variant="contained" color="secondary" className="random">
-                    New Game
+                    <Link to="/">
+                        New Game
+                    </Link>
                 </Button>
                 }
 
