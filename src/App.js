@@ -18,7 +18,8 @@ class App extends Component {
       data: [],
       questionSets: [],
       back: false,
-      answers: Array(10).fill(null)
+      answers: Array(10).fill(null),
+      loading: true
 
     }
     this.getQuestions = this.getQuestions.bind(this);
@@ -34,25 +35,29 @@ class App extends Component {
     const data = await Axios.get(url);
     console.log(data);
     this.setState({
-      data: makeQuestionSets(data.data.results)
+      data: makeQuestionSets(data.data.results),
+      loading: false
     })
 
   }
   selectDifficulty (difficulty) {
-    this.setState({
-      difficulty
-    }, () => this.getQuestions()
+    this.setState(state => ({
+      difficulty: difficulty
+    }), () => this.getQuestions()
     )
   }
   selectCategory (category) {
-    this.setState({
-      category,
+    this.setState(state => ({
+      category: category,
       back: true
-    }, () => this.props.history.push('/difficulty'))
+    }), () => this.props.history.push('/difficulty'))
   }
   handleSubmit () {
     this.setState({
-      back: false
+      back: false,
+      category: "",
+      difficulty: "",
+      loading: true
     })
   }
 
@@ -62,7 +67,7 @@ class App extends Component {
     })
   }
   render () {
-    const { back, data, answers } = this.state;
+    const { back, data, answers, loading } = this.state;
     return (
       <div className="App">
         <Switch>
@@ -70,7 +75,7 @@ class App extends Component {
           <Route exact path="/difficulty" render={(routeProps) => <Difficulty {...routeProps} selectDifficulty={this.selectDifficulty} />} />
           <Route exact path="/category" render={(routeProps) => <Category {...routeProps} selectCategory={this.selectCategory} />} />
           <Redirect exact from="/difficulty" to="/game" />
-          <Route exact path="/game" render={routeProps => back ? <Game {...routeProps} questionSets={data} handleSubmit={this.handleSubmit} syncAnswers={this.syncAnswers} /> : <Redirect to={{ pathname: "/" }} />} />
+          <Route exact path="/game" render={routeProps => back ? <Game {...routeProps} questionSets={data} handleSubmit={this.handleSubmit} loading={loading} syncAnswers={this.syncAnswers} /> : <Redirect to={{ pathname: "/" }} />} />
           <Redirect exact from="/game" to="/results" />
 
           <Route exact path="/results" render={(routeProps) => <Results {...routeProps} questionSets={data} answers={answers} />} />

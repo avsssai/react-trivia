@@ -39,3 +39,34 @@
 	color: white;
 	transform: scale(1.02);
 }
+
+@media (max-width: 576px) {
+	.category-wrapper {
+		height: 90vh;
+		display: grid;
+		grid-template-columns: repeat(1, 100%);
+		width: 60%;
+
+		margin: 5vh auto;
+	}
+	.category-wrapper button {
+		width: 400px;
+		height: 100px;
+		margin: 2rem;
+		border-radius: 15px;
+		background-color: #f1faee;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

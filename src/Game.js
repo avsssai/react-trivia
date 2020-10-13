@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Question from './Question';
+import Loader from './Loader';
 import { CSSTransition } from 'react-transition-group';
 import './Game.css';
 
@@ -76,11 +77,10 @@ export default class Game extends Component {
         })
     }
     render () {
-        const { questionSets } = this.props;
+        const { questionSets, loading } = this.props;
         const { questionNumber, inProp, answers, dialogOpen } = this.state;
         const questionCards = questionSets.map((question, questionIndex) => {
             return (
-
                 <CSSTransition in={inProp} timeout={500} classNames="my-question">
 
                     <Question
@@ -103,7 +103,10 @@ export default class Game extends Component {
             <div className="game-container">
                 <Navbar endGameButton handleClickOpen={this.handleDialogOpen} handleClickClose={this.handleDialogClose} dialogOpen={dialogOpen} handleSubmit={() => this.props.handleSubmit()} />
                 {/* <EndDialog handleClickOpen={this.handleDialogOpen} handleClickClose={this.handleDialogClose} open={dialogOpen} /> */}
-                {questionCards[questionNumber]}
+                {loading ?
+                    <Loader /> :
+                    questionCards[questionNumber]
+                }
             </div>
         )
     }
